@@ -26,7 +26,7 @@ class Application
 
     if req.path.include?("/items/")
       requested_item = req.path.split("/items/").last
-      found_item = Item.items.find {|i| i.name == requested_item }
+      found_item = @@items.find {|i| i.name == requested_item }
       # binding.pry
       if !found_item.nil?
         resp.write "#{found_item.price}"
