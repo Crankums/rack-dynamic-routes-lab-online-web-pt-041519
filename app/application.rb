@@ -25,7 +25,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if req.path.include?(/items/)
+    if req.path.include?("/items/")
       requested_item = req.path.split("/items/").last
       found_item = Item.items.find {|i| i.name == requested_item }
       if !found_item.nil?
