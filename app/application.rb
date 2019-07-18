@@ -5,7 +5,7 @@
 #
 #     if req.path.match(/items/)
 #       item_name = req.path.split("/items/").last
-#       item = @@items.find{|i| i.name == item_name} #why is this not a '=='?
+#       item = @@items.find{|i| i.name == item_name}
 #       if item != nil
 #         resp.write item.price
 #       else
@@ -26,7 +26,7 @@ class Application
 
     if req.path.match(/items/)
       requested_item = req.path.split("/items/").last
-      found_item = @@items.find {|i| i.name == requested_item }
+      found_item = @@items.find {|i| i.name == requested_item}
       # binding.pry
       if found_item != nil
         resp.write found_item.price
