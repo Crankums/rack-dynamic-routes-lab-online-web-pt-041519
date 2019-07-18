@@ -27,7 +27,7 @@ class Application
 
     if req.path.match(/items/)
       requested_item = req.path.split("/items/").last
-      found_item = Item.items.find {|i| i.name == requested_item }
+      if @@items.find {|i| i.name == requested_item }
       if !found_item.nil?
         resp.write "#{found_item.price}"
       else
