@@ -24,9 +24,9 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if req.path.include?("/items/")
+    if req.path.match(/items/)
       requested_item = req.path.split("/items/").last
-      found_item = Item.items.find {|i| i.name == requested_item }
+      found_item = @@items.find {|i| i.name == requested_item }
       # binding.pry
       if found_item != nil
         resp.write found_item.price
