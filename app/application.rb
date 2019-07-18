@@ -29,7 +29,7 @@ class Application
       found_item = Item.items.find {|i| i.name == requested_item }
       # binding.pry
       if found_item != nil
-        resp.write "#{found_item.price}"
+        resp.write found_item.price
       else
         resp.write "Item not found"
         resp.status = 400
