@@ -4,7 +4,7 @@ class Item
   def self.items
     @@item
   end
-  
+
   def initialize(name,price)
     @name = name
     @price = price
