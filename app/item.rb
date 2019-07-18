@@ -1,5 +1,6 @@
 class Item
   attr_accessor :name, :price
+
   @@item = []
   def self.items
     @@item
